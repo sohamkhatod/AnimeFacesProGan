@@ -84,7 +84,7 @@ python evaluation.py [options]
 
 ### Example Usage:
 ```bash
-ppython evaluation.py --save final.png -n 20 --size 8 --Generator ./train/Generator.keras --Discriminator ./train/Disciminator.keras --Display-disc True
+python evaluation.py --save final.png -n 20 --size 8 --Generator ./train/Generator.keras --Discriminator ./train/Disciminator.keras --Display-disc True
 ```
 
 This command will display 20 images in a 5x4 grid, using the trained **Generator** and **Discriminator** models from the `/train` folder, and show the Discriminator score.
