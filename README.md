@@ -62,6 +62,32 @@ Below is an example of an anime face from the dataset:
 
 ![Sample Anime Face](train/dataset/traindataset.png)
 
+## Usage
+
+The project includes a script (`evaluation.py`) to generate images from the trained weights located in the `/train` folder. You can modify the behavior of the script using the following command-line arguments.
+
+### Command-Line Arguments
+
+The `evaluation.py` script accepts several arguments that allow you to customize the number of images, plot size, and model file locations:
+
+```bash
+python evaluation.py [options]
+```
+
+#### Arguments:
+- **`-n`, `--number-images`**: Specifies the number of images to display. Default is `1`.
+- **`-s`, `--size`**: Specifies the size of the complete plot (grid). Default is `3`.
+- **`-g`, `--Generator`**: Path to the trained **Generator** model. The file should be named `Generator.keras`. Default is `./Generator.keras`.
+- **`-d`, `--Discriminator`**: Path to the trained **Discriminator** model. The file should be named `Discriminator.keras`. Default is `./Disciminator.keras`.
+- **`--Display-disc`**: A flag to display the Discriminator score during evaluation. Default is `False`.
+- **`--save`**: Name to save the file as .Example - final.png
+
+### Example Usage:
+```bash
+ppython evaluation.py --save final.png -n 20 --size 8 --Generator ./train/Generator.keras --Discriminator ./train/Disciminator.keras --Display-disc True
+```
+
+This command will display 20 images in a 5x4 grid, using the trained **Generator** and **Discriminator** models from the `/train` folder, and show the Discriminator score.
 
 ### Outputs
 The training process generates intermediate results for each resolution stage. Sample images and training GIFs are stored in the `outputs/` directory.
@@ -89,32 +115,7 @@ Below are sample GIFs showcasing training progress for each resolution:
   - Normal: ![64x64 Normal](train/images/gif/output_normal_64x64.gif)
   - FadeIn: ![64x64 FadeIn](train/images/gif/output_fadein_64x64.gif)
 
-## Usage
 
-The project includes a script (`evaluation.py`) to generate images from the trained weights located in the `/train` folder. You can modify the behavior of the script using the following command-line arguments.
-
-### Command-Line Arguments
-
-The `evaluation.py` script accepts several arguments that allow you to customize the number of images, plot size, and model file locations:
-
-```bash
-python evaluation.py [options]
-```
-
-#### Arguments:
-- **`-n`, `--number-images`**: Specifies the number of images to display. Default is `1`.
-- **`-s`, `--size`**: Specifies the size of the complete plot (grid). Default is `3`.
-- **`-g`, `--Generator`**: Path to the trained **Generator** model. The file should be named `Generator.keras`. Default is `./Generator.keras`.
-- **`-d`, `--Discriminator`**: Path to the trained **Discriminator** model. The file should be named `Discriminator.keras`. Default is `./Disciminator.keras`.
-- **`--Display-disc`**: A flag to display the Discriminator score during evaluation. Default is `False`.
-- **`--save`**: Name to save the file as .Example - final.png
-
-### Example Usage:
-```bash
-ppython evaluation.py --save final.png -n 20 --size 8 --Generator ./train/Generator.keras --Discriminator ./train/Disciminator.keras --Display-disc True
-```
-
-This command will display 5 images in a 4x4 grid, using the trained **Generator** and **Discriminator** models from the `/train` folder, and show the Discriminator score.
 
 ## Final Generated Image
 
