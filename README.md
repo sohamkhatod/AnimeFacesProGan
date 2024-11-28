@@ -30,15 +30,6 @@ This project requires the following major libraries:
    pip install -r requirements.txt
    ```
 
-### Usage
-To customize hyperparameters, edit the parameters in the initial blocks of `main.py` (or the primary script):
-```python
-# Example hyperparameter block
-learning_rate = 0.001
-latent_dim = 256
-batch_size = [5,5,5]
-```
-
 
 ## Training
 
@@ -47,6 +38,14 @@ The code supports **distributed training** to enable efficient scaling for large
 ### Training Environment
 - **Distributed Training**: The model can be trained across multiple devices.
 - **TPU**: The model was trained using Kaggle's **TPU** for faster computation.
+
+To customize hyperparameters, edit the parameters in the initial blocks of `progan-wgan-gp-64-anime-face.ipynb` (or the primary script):
+```python
+# Example hyperparameter block
+learning_rate = 0.001
+latent_dim = 256
+batch_size = [5,5,5]
+```
 
 Feel free to adjust the training configuration based on your hardware setup.
 
@@ -84,10 +83,10 @@ python evaluation.py [options]
 
 ### Example Usage:
 ```bash
-python evaluation.py --save final.png -n 20 --size 8 --Generator ./train/Generator.keras --Discriminator ./train/Disciminator.keras --Display-disc True
+python evaluation.py --save final.png -n 20 --size 8 --Generator ./train/Generator.keras --Discriminator ./train/Disciminator.keras 
 ```
 
-This command will display 20 images in a 5x4 grid, using the trained **Generator** and **Discriminator** models from the `/train` folder, and show the Discriminator score.
+This command will display 20 images in a 5x4 grid, using the trained **Generator** and **Discriminator** models from the `/train` folder.
 
 ### Outputs
 The training process generates intermediate results for each resolution stage. Sample images and training GIFs are stored in the `outputs/` directory.
