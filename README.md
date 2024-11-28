@@ -22,8 +22,8 @@ This project requires the following major libraries:
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone <repository_url>
-   cd progan-anime-faces
+   git clone https://github.com/sohamkhatod/AnimeFacesProGan.git
+   cd AnimeFacesProGan
    ```
 2. Install dependencies:
    ```bash
@@ -38,10 +38,7 @@ learning_rate = 0.001
 latent_dim = 256
 batch_size = [5,5,5]
 ```
-Run the training script:
-```bash
-python main.py
-```
+
 
 ## Training
 
@@ -111,7 +108,7 @@ python evaluation.py [options]
 - **`-d`, `--Discriminator`**: Path to the trained **Discriminator** model. The file should be named `Discriminator.keras`. Default is `./Disciminator.keras`.
 - **`--Display-disc`**: A flag to display the Discriminator score during evaluation. Default is `False`.
 - **`--save`**: Name to save the file as .Example - final.png
-- 
+
 ### Example Usage:
 ```bash
 ppython evaluation.py --save final.png -n 20 --size 8 --Generator ./train/Generator.keras --Discriminator ./train/Disciminator.keras --Display-disc True

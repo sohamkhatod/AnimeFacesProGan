@@ -1,0 +1,9 @@
+Pillow
+tqdm
+numpy
+matplotlib
+keras
+tensorflow
+scikit-image
+scipy
+ipython
